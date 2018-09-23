@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+Coupon.destroy_all
+20.times do
+Coupon.create({
+  coupon_code: Faker::Code.imei,
+  store: Faker::Restaurant.name
+  })
+end
